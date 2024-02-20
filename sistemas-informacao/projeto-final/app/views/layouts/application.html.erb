@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PimpMyUTI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div class="layout-container">
+    <% unless controller_name == "sessions" or controller_name == "registrations" %>
+    <div class="sidenav">
+      <h2>Hospital Ciro Ibaneis</h2>
+      <hr class="divider">
+
+      <div class="nav-list">
+        <a href="/">Leitos</a>
+        <a href="/patients">Pacientes</a>
+        <a href="/graphs">Dashboard</a>
+        <a href="/patients/new">Adicionar Paciente</a>
+        <a href="/beds/new">Adicionar Leito</a>
+      </div>
+    </div>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <div class="main-container">
+      <%= yield%>
+    </div>
+  </div>
+</body>
+
+</html>

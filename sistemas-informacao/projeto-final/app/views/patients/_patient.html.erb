@@ -1,0 +1,11 @@
+<li class="page-item">
+  <div>
+    <p> <b> Paciente: </b> <%= patient.name %></p>
+    <p> <b> RG: </b><%= patient.rg %></p>
+    <p> <b> Idade: </b> <%= patient.age %></p>
+    <p> <b> Causa de Internação: </b> <%= patient.cause %></p>
+    <p> <b> Descrição: </b> <%= patient.description %></p>
+    <p> <b> Sexo: </b> <%= patient.gender.name %></p>
+    <%= link_to "Editar Paciente", patient %>
+  </div>
+</li>

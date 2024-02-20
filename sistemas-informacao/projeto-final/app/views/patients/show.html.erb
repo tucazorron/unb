@@ -1,0 +1,48 @@
+<%= form_for :patient, url: patient_path(@patient), method: :patch, html: {class: "form-container"}  do |f| %>
+<h1 class="page-title">Detalhes do Paciente</h1>
+<div class="form">
+  <div class="col">
+    <div class="input-wrapper">
+      <%= f.label :nome %><br />
+      <%= f.text_field :name, class: "input-box" %><br />
+    </div>
+
+    <div class="input-wrapper">
+      <%= f.label :RG %><br />
+      <%= f.text_field :rg, class: "input-box" %><br />
+    </div>
+
+    <div class="input-wrapper">
+      <%= f.label :idade %><br />
+      <%= f.text_field :age, class: "input-box" %><br />
+    </div>
+
+    <div class="input-wrapper">
+      <%= f.label :sexo %><br />
+      <%= f.collection_select :gender_id, Gender.order(:name),:id,:name %>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="input-wrapper">
+      <%= f.label :motivo_da_internção %><br />
+      <%= f.text_field :cause, class: "input-box" %><br />
+    </div>
+
+    <%
+=begin%>
+ <div class="input-wrapper">
+      <%= f.label :leito %><br />
+      <%= f.collection_select :bed_id, [@patient.bed] + Bed.order(:id).where("busy == false"),:id,:name %>
+    </div> 
+<%
+=end%>
+
+    <div class="input-wrapper">
+      <%= f.label :descrição %><br />
+      <%= f.text_area :description, rows: 10, class: 'text-area-box', placeholder: "Descrição" %><br />
+    </div>
+    <%= f.submit "Salvar", class: "btn" %>
+  </div>
+</div>
+<% end %>

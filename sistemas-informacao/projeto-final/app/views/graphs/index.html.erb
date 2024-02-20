@@ -1,0 +1,11 @@
+<div class="graphsOut">
+  <h1 class="page-title" style="align-content:center">Dashboard</h1>
+  <div class="graphsIn">
+    <h2>Ocupação por Ala</h2>
+    <%= bar_chart Bed.group(:wing_id).where("busy == true").count.transform_keys { |key| Wing.find(key).name }  %>
+  </div>
+  <div class="graphsIn">
+    <h2>Ocupação por Tipo</h2>
+    <%= bar_chart Bed.group(:bed_type_id).where("busy == true").count.transform_keys { |key| BedType.find(key).type_name } %>
+  </div>
+</div>

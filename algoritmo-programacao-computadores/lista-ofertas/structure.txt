@@ -1,0 +1,62 @@
+csvHeaders = [
+    code,
+    name,
+    classId,
+    period,
+    teacher,
+    schedule,
+    vacanciesOffered,
+    vacanciesOccupied,
+    local
+]
+
+---
+
+teachers = {
+    teacher: {
+        code: {
+            'name': name,
+            'classId': classId,
+            'hours': hours,
+            'vacanciesOccupied': vacanciesOccupied
+        }
+    }
+}
+
+teachers['JORGE LUIZ DE ALMEIDA FERREIRA']['ENM0130'] => {
+    name: "PROJETO DE GRADUACAO 2",
+    clasId: "30",
+    hours: 90,
+    vacanciesOccupied: 2
+}
+
+---
+
+disciplines = {
+    code: {
+        classId: [
+            teacher
+        ]
+    }
+}
+
+disciplines["ENM0131"]["01A"] => [
+    "ALBERTO CARLOS GUIMARAES CASTRO DINIZ",
+    "ALINE SOUZA DE PAULA"
+]
+
+---
+
+codesToNames = {
+    code: name
+}
+
+codesToNames['ENM0130'] => 'PROJETO DE GRADUACAO 2'
+
+---
+
+registrations = {
+    code: vacanciesOccupied
+}
+
+registrations['ENM0130'] => 2

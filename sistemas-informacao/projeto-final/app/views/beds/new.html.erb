@@ -1,0 +1,16 @@
+  <%= form_for :bed, url: beds_path(@bed), html: {class: "form-container"}  do |f| %>
+  <h1 class="page-title">Cadastro de Leito</h1>
+  <div class="form">
+    <div class="col">
+      <div class="input-wrapper">
+        <%= f.label :tipo_de_leito %><br />
+        <%= f.collection_select :bed_type_id, BedType.order(:type_name),:id,:type_name, prompt: "Selecione o tipo do leito" %>
+      </div>
+      <div class="input-wrapper">
+        <%= f.label :ala %><br />
+        <%= f.collection_select :wing_id, Wing.order(:name),:id,:name, prompt: "Selecione a Ala" %>
+      </div>
+      <%= f.submit "Cadastrar", class: "btn" %>
+    </div>
+  </div>
+  <% end %>

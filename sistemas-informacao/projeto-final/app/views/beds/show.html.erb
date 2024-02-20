@@ -1,0 +1,18 @@
+  <%= form_for :bed, url: bed_path(@bed), method: :patch, html: {class: "form-container"}  do |f| %>
+  <h1 class="page-title">Detalhes do Leito</h1>
+  <div class="form">
+    <div class="col">
+      <h1>Leito Nº <%= @bed.id%></h1>
+      <div class="input-wrapper">
+        <%= f.label :tipo_de_leito %><br />
+        <%= f.collection_select :bed_type_id, BedType.order(:type_name),:id,:type_name, prompt: true %>
+      </div>
+      <div class="input-wrapper">
+        <%= f.label :ala %><br />
+        <%= f.collection_select :wing_id, Wing.order(:name),:id,:name, prompt: true %>
+      </div>
+
+      <%= f.submit "salvar", class: "btn" %>
+    </div>
+  </div>
+  <% end %>

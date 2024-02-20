@@ -1,0 +1,13 @@
+<li class="page-item">
+  <div>
+    <p> <b>Numero do Leito:</b> <%= bed.id %> </p>
+    <p> <b>Ocupação:</b> <%= bed.busy ? "Sim" : "Não" %> </p>
+    <p> <b> Ala: </b> <%= bed.wing.name %> </p>
+    <p> <b> Tipo do leito: </b> <%= bed.bed_type.type_name %> </p>
+    <% if bed.busy then %>
+    <p> <b>Paciente:</b> <%= Patient.find_by(bed_id: bed.id).name %> </p>
+    <p> <b>Entrada:</b> <%= Patient.find_by(bed_id: bed.id).created_at %> </p>
+    <% end %>
+    <%= link_to "Editar Leito", bed %>
+  </div>
+</li>

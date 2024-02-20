@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+}
+
+.notice {
+  margin: 0;
+}
+
+.alert {
+  margin: 1rem;
+  color: red;
+}
+
+// Index page
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+  margin-top: 8rem;
+}
+
+
+.page-item {
+  display: flex;
+  width: 40%;
+  height: 30% ;
+  background-color: #EAEAEA;
+  list-style: none;
+  padding: 1rem;
+  margin: 2rem 4rem 2rem 0;
+  border-radius: 10px;
+}

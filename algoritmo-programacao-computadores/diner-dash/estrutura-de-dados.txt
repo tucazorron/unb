@@ -1,0 +1,84 @@
+----------------
+
+areas => dicionario
+    chave => nome da area
+    valor => lista dos numeros das mesas
+
+areas = {
+    'salao': [1, 2, 4],
+    'varanda: [3, 5]
+}
+
+----------------
+
+cardapio => dicionario
+    chave => nome do item no cardapio
+    valor => dicionario
+        chave => nome do ingrediente no item
+        valor => numero de ingredientes necessarios para fazer item
+
+cardapio = {
+    'big mac': {
+        'alface': 1,
+        'cebola': 1,
+        'hamburguer': 2,
+        'molho especial': 1,
+        'pao com gergelim': 1,
+        'picles': 1,
+        'queijo': 1
+    },
+    'lasanha': {
+        'carne': 3,
+        'massa': 3,
+        'queijo': 3
+    }
+}
+
+----------------
+
+estoque => dicionario
+    chave => nome do ingrediente no estoque
+    valor => quantidade deste ingrediente no estoque
+
+estoque = {
+    'pao': 1,
+    'presunto: 1,
+    'queijo': 1
+}
+
+----------------
+
+historico => lista de listas
+    elemento => lista com dois elementos
+        primeiro elemento => numero da mesa que fez o pedido
+        segundo elemento => nome do item que a mesa pediu
+
+historico = [
+    [1, 'big mac'],
+    [2, 'lasanha']
+]
+
+----------------
+
+mesas => dicionario
+    chave => numero da mesa
+    valor => estado de ocupacacao da mesa
+
+mesas = {
+    1: True,
+    2: False
+}
+
+----------------
+
+pedidos => dicionario
+    chave => numero da mesa
+    valor => lista de n elementos
+        elemento => nome do item no cardapio que foi pedido por esta mesa
+
+pedidos = {
+    1: ['lasanha', 'big mac'],
+    2: ['macarrao', 'feijoada']
+}
+
+----------------
