@@ -1,0 +1,12 @@
+.vscode
+output/
+*.o
+*.exe
+*.out
+*.java
+*.class
+build/
+.cache/
+compile_commands.json
+jvm
+documents/*
